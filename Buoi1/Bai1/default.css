@@ -1,0 +1,40 @@
+div > i {
+    width: 40px;
+}
+
+.main {
+    background-color: gray;
+    display: flex;
+}
+
+.form > div {
+    margin: 10px;
+}
+
+.side-bar {
+    width: 25%;
+    background-color: white;
+    float: left;
+    margin: 5px;
+}
+
+.content {
+    background-color: white;
+    width: 74%;
+    height: -webkit-fill-available;
+    margin: 5px;
+}
+
+a {
+    text-decoration: unset;
+    color: black;
+}
+
+.grid-layout > img {
+    margin: 20px;
+}
+
+table{
+    width: 90%;
+    margin: auto    ;
+}

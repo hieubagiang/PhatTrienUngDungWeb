@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<style>
+    div {
+        margin: 5px;
+    }
+</style>
+<body>
+<form onsubmit="onSubmit(); return false;">
+<div>
+    <label>
+        Month:
+        <input type="text" name="month" id="month">
+    </label>
+</div>
+
+        <div><label>
+            Year:
+            <input type="text" name="year" id="year">
+        </label></div>
+    <input type="submit" value="Submit">
+
+
+</form>
+</body>
+<script>
+    function onSubmit() {
+        let month = document.getElementById("month");
+        let year = document.getElementById("year");
+        let daysInMonth = new Date(year.value, month.value, 0).getDate();
+        alert('Tháng ' + month.value + ' năm '+ year.value+ ' có ' + daysInMonth +' ngày');
+    }
+</script>
+</html>

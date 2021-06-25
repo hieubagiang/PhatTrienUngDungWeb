@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    let inputA = prompt("Nhap a", "");
+    let inputB = prompt("Nhap b", "");
+    let inputC = prompt("Nhap c", "");
+    let a = parseFloat(inputA);
+    let b = parseFloat(inputB);
+    let c = parseFloat(inputC);
+    let result;
+
+    let delta = (b * b - 4 * a * c);
+    if (delta === 0) {
+        x1 = -b / (2 * a);
+        x2 = -b / (2 * a);
+        result= "phuong trinh co nghiem kep x=" + x1;
+    } else if (delta < 0) {
+        result = "phuong trinh vo nghiem";
+    } else {
+
+        x1 = (-b - Math.sqrt(delta)) / (2 * a);
+        x2 = (-b + Math.sqrt(delta)) / (2 * a);
+        result = "phuong trinh co hai nghiem:\n" +
+            "x1= " + x1 +
+            "\n;x2= " + x2;
+    }
+    alert(result);
+    document.write(a+"X^2 +"+b+"x" + "+" + c + "= 0" + "<br>=>"+ result);
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+    <style>
+        input{
+            width: 50px;
+        }
+        div {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>
+    Draw Table
+</h1>
+<br>
+<label>Form vẽ bảng </label><br>
+<form id="form" onreset="onReset(); return false;" onsubmit="onSubmit(); return false;">
+    <div><label>Số dòng: </label> <input type="text" name="row"></div>
+    <div><label>Số cột: </label> <input type="text" name="col"></div><br>
+    <input type="reset">
+    <input type="submit">
+
+</form>
+<table id="tb_result">
+
+</table>
+<script>
+    let form;
+    function onSubmit() {
+        form = document.getElementById("form");
+        let table = document.getElementById("tb_result");
+        let row = form.querySelector("input[name='row']").value;
+        let col = form.querySelector("input[name='col']").value;
+        let matrix = create2DArray(row,col);
+        console.log(matrix);
+        for(let i =0; i<row;i++){
+            for(let j=0; j<col;j++)
+            {
+                if(i>=j){
+                    matrix[i][j]=j+1;
+                }
+                else{
+                    matrix[i][j]=0;
+
+                }
+            }
+        }
+        var sOut="";
+        for (var y=0; y<matrix.length; y++ ) { // for each row
+            sOut += "<tr>";
+            for (var x=0; x<matrix[y].length; x++ ) { // for each clm
+                sOut += "<td> <input type='text' value='"+matrix[y][x]+"'>" + "</td>";
+            }
+            sOut += "</tr>";
+        }
+        table.innerHTML=sOut;
+    }
+    function onReset() {
+        let table = document.getElementById("tb_result");
+        let row = form.querySelector("input[name='row']");
+        let col = form.querySelector("input[name='col']");
+        row.value="";
+        col.value="";
+        table.innerHTML="";
+    }
+    function create2DArray(rows,columns) {
+        let x = new Array(rows);
+        for (let i = 0; i < rows; i++) {
+            x[i] = new Array(columns);
+        }
+        return x;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    let inputA = prompt("Nhap a", "");
+    let inputB= prompt("Nhap b", "");
+    let a = parseFloat(inputA);
+    let b = parseFloat(inputB);
+    let  result;
+    if(a===0){
+        if(b!==0){
+            result="Phương trình vô nghiệm";
+        }else{
+            result="Phương trình có vô số nghiệm";
+        }
+    }else{
+            result = "x = "+ -b/a;
+    }
+    alert(result);
+    document.write(a+"x" + "+" + b + "= 0" + "<br>=>"+ result);
+</script>
+</body>
+</html>

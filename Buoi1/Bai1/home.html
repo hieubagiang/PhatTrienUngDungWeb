@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <meta charset="UTF-8">
+    <title>Photo site</title>
+    <style>
+        div > i {
+            width: 40px;
+        }
+
+        .main {
+            background-color: gray;
+            display: flex;
+        }
+
+        .form > div {
+            margin: 10px;
+        }
+
+        .side-bar {
+            width: 25%;
+            background-color: white;
+            float: left;
+            margin: 5px;
+        }
+
+        .content {
+            background-color: white;
+            width: 74%;
+            height: -webkit-fill-available;
+            margin: 5px;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: unset;
+            color: black;
+        }
+
+        .grid-layout > img {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100vw; height:100vh">
+    <header>
+        <img src="http://home.actvn.edu.vn/Upload/svda/hoc-vien-mat-ma.jpg" width="98%" height="300px" alt="123"/>
+    </header>
+    <div class="main">
+        <div class="side-bar">
+            <form>
+                <div style="margin: 10px;">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Họ tên"/>
+                </div>
+
+                <div style="margin: 10px;">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password"/>
+                </div>
+                <input type="reset" name="reset" value="reset"/>
+                <input type="submit" name="submit" value="login"/>
+            </form>
+            <div>
+                <a href="home.html">Home</a> </br>
+                <a href="register.html">Register</a></br>
+                <a href="introduction.html">Introduction</a></br>
+                <a href="contact.html">Contact</a></br>
+                <a href="help.html">Help</a>
+            </div>
+        </div>
+        <div class="content">
+            <h2 style="color: blue">Welcome to your <span style="color: red">Photo Site</span></h2>
+            <div class="grid-layout">
+                <img src="./img/akali_true_dame.jpg" width="25%" , height="200px">
+                <img src="./img/akali_true_dame.jpg" width="25%" , height="200px">
+                <img src="./img/akali_true_dame.jpg" width="25%" , height="200px">
+            </div>
+            <p>
+                The building block of a database is the record. A record is a collection of related data treated as a
+                single entity For example a hockey trading card could be called a record it brings together the name,
+                photograph team, and statistics of one player
+                </br></br><a href="introduction.html" style="font-weight: bold;text-decoration: underline;">An introduction
+                to our web site</a>
+                </br></br>A collection of records that share the same fields is called a table because this kind of
+                information can easily be presented in table format each column represents a field and each row
+                represents a record in fact, the word column is synonymous with the word field and the word row is
+                synonymous with the word record
+            </p>
+        </div>
+    </div>
+    <footer style="background-color: gray; height:40px; display: flex">
+        <div style="display: flex;width:25%;background-color: white; height: -webkit-fill-available; float:left; text-align:center;justify-content: center; align-items: center; margin: 5px">
+            <i class="fa fa-envelope"></i>
+            <i class="fa fa-home"></i>
+            <i class="fa fa-fax"></i>
+        </div>
+        <div style="background-color: white; width: 74%;height:-webkit-fill-available; margin: 5px; display: flex">
+            <div style="margin-left: 20px;margin-top: auto;margin-bottom: auto">Copyright(C) 2003, your company name.
+                all right reserved
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

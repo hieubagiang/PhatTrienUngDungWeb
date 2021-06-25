@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        let tableData="";
+        function initData() {
+            $.getJSON("bank_data.json", function(json) {
+                for (let i=0; i<json.length; i++){
+                    tableData+="<tr>";
+                    tableData+= "<td>"+ json[i]["bankCode"] + "</td>";
+                    tableData+= "<td>"+ json[i]["bankName"] + "</td>";
+                        tableData+= "<td>"+ json[i]["nameGB"] + "</td>";
+                    tableData+= "<td>"+ json[i]["countryID"] + "</td>";
+                    tableData+="</tr>";
+                }
+                $("#myTable")[0].innerHTML=tableData;
+            });
+
+        }
+
+        $(document).ready(function(){
+            initData();
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #myInput {
+            background-image: url(/img/searchicon.png);
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Bank Data</h2>
+<input style="width: 300px" id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+<table id="table">
+    <thead>
+    <tr>
+        <th>Bank Code</th>
+        <th>Bank Name</th>
+        <th>English</th>
+        <th>Country ID</th>
+    </tr>
+    </thead>
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+
+
+</body>
+</html>
